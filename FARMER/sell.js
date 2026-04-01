@@ -10,7 +10,7 @@ if (!user || !user.id) {
   window.location.href = "../LOGIN_SIGNUP/login_signup.html";
 }
 
-const farmerId = user.id;
+const farmerId = Number(user.id);
 let editingId = null;
 
 /* ================= MESSAGE ================= */
@@ -34,8 +34,8 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const crop = document.getElementById("cropName").value.trim();
-  const quantity = document.getElementById("quantity").value.trim();
-  const price = document.getElementById("price").value.trim();
+  const quantity = Number(document.getElementById("quantity").value);
+  const price = Number(document.getElementById("price").value);
   const district = document.getElementById("district").value.trim();
 
   // VALIDATION
