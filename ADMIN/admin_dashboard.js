@@ -127,8 +127,32 @@ function renderChart(data) {
   gradient.addColorStop(1, "rgba(34,197,94,0)");
 
   // If no backend data, fallback
-const labels = data?.map(d => d.day) || ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
-const values = data?.map(d => d.orders) || [10,20,15,25,30,40];
+const last7Days = [];
+const today = new Date();
+
+// Create last 7 days
+for (let i = 6; i >= 0; i--) {
+  const d = new Date();
+  d.setDate(today.getDate() - i);
+
+  const formatted = d.toLocaleDateString("en-CA"); // YYYY-MM-DD in local time
+  last7Days.push(formatted);
+}
+
+// Map backend data
+const dataMap = {};
+data.forEach(d => {
+  dataMap[d.date] = d.total;
+});
+
+// Fill missing days with 0
+const labels = last7Days.map(d => {
+  return new Date(d).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "short"
+  });
+});
+const values = last7Days.map(date => dataMap[date] || 0);
 
   if (AdminState.chart) {
   AdminState.chart.destroy();

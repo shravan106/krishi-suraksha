@@ -739,8 +739,13 @@ app.get("/api/admin/stats", async (req, res) => {
     );
 
   const [chart] = await db.execute(`
-    SELECT DATE(created_at) day, COUNT(*) orders
-    FROM orders GROUP BY day LIMIT 7
+    SELECT 
+      DATE(CONVERT_TZ(created_at, '+00:00', '+05:30')) AS date,
+      COUNT(*) AS total
+    FROM orders
+    WHERE created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY)
+    GROUP BY DATE(CONVERT_TZ(created_at, '+00:00', '+05:30'))
+    ORDER BY date
   `);
     const [topCrop] = await db.execute(`
     SELECT crop, COUNT(*) c FROM crops
