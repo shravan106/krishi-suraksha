@@ -142,7 +142,8 @@ for (let i = 6; i >= 0; i--) {
 // Map backend data
 const dataMap = {};
 data.forEach(d => {
-  dataMap[d.date] = d.total;
+  const formatted = new Date(d.date).toLocaleDateString("en-CA");
+  dataMap[formatted] = d.total;
 });
 
 // Fill missing days with 0
