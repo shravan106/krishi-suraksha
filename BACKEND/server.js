@@ -743,7 +743,8 @@ app.get("/api/admin/stats", async (req, res) => {
       DATE(CONVERT_TZ(created_at, '+00:00', '+05:30')) AS date,
       COUNT(*) AS total
     FROM orders
-    WHERE created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY)
+    WHERE CONVERT_TZ(created_at, '+00:00', '+05:30') 
+      >= DATE_SUB(CONVERT_TZ(NOW(), '+00:00', '+05:30'), INTERVAL 7 DAY)
     GROUP BY DATE(CONVERT_TZ(created_at, '+00:00', '+05:30'))
     ORDER BY date
   `);
