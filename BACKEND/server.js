@@ -12,6 +12,9 @@ const app = express();
 app.get("/", (req, res) => {
   res.send("KrishiSuraksha API is running 🚀");
 });
+app.get("/api/test", (req, res) => {
+  res.json({ message: "API working" });
+});
 /* ================= SERVER ================= */
 
 const PORT = process.env.PORT || 5000;
