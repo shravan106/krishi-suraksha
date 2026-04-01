@@ -7,9 +7,15 @@ import axios from "axios";
 import dotenv from "dotenv";
 
 dotenv.config();
-
 const app = express();
-const PORT = 3000;
+
+/* ================= SERVER ================= */
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 /* ================= DATABASE ================= */
 
@@ -417,11 +423,6 @@ app.put("/api/buy/:id", async (req, res) => {
 
 //
 
-/* ================= SERVER ================= */
-
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
 
 /* ================= FORGOT PASSWORD ================= */
 app.post("/api/forgot-password", async (req, res) => {
