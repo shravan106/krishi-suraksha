@@ -940,13 +940,13 @@ app.get("/api/admin/analytics", async (req, res) => {
     }
 
     const [revenue] = await db.execute(`
-      SELECT DATE(o.created_at) as date,
-             SUM(c.price * o.quantity) as total
+      SELECT DATE(CONVERT_TZ(o.created_at, '+00:00', '+05:30')) as date,
+      SUM(c.price * o.quantity) as total
       FROM orders o
       JOIN crops c ON o.crop_id = c.id
       WHERE o.status = 'Delivered'
       ${condition}
-      GROUP BY DATE(o.created_at)
+      GROUP BY DATE(CONVERT_TZ(o.created_at, '+00:00', '+05:30'))
       ORDER BY date
     `);
 
