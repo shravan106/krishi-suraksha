@@ -6,7 +6,7 @@ const container = document.getElementById("listingContainer");
 const user = JSON.parse(localStorage.getItem("user"));
 
 if (!user || !user.id) {
-  showToast("Please login again","error");
+  alert("Please login again");
   window.location.href = "../LOGIN_SIGNUP/login_signup.html";
 }
 
