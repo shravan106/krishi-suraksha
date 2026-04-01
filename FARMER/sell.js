@@ -3,9 +3,9 @@ const API = "https://krishi-suraksha.onrender.com/api/crops";
 const form = document.getElementById("sellForm");
 const container = document.getElementById("listingContainer");
 
-const user = JSON.parse(localStorage.getItem("user")) || {id:1};
+const user = JSON.parse(localStorage.getItem("user"));
 
-if (!user) {
+if (!user || !user.id) {
   window.location.href = "../LOGIN_SIGNUP/login_signup.html";
 }
 

@@ -110,17 +110,18 @@ loginForm.addEventListener("submit", async (e) => {
       showToast(data.error, "error");
       return;
     }
+    localStorage.setItem("user", JSON.stringify(data));
 
     sessionStorage.setItem("userId", data.id);
     sessionStorage.setItem("loggedInUser", data.name || data.email);
-    sessionStorage.setItem("role", role);
+    sessionStorage.setItem("role", data.role);
 
     showToast("Login successful", "success");
 
-if (role === "admin") {
+if (data.role === "admin") {
   sessionStorage.setItem("adminLoggedIn", true);
   window.location.href = "../ADMIN/admin_dashboard.html";
-} else if (role === "farmer") {
+} else if (data.role === "farmer") {
   window.location.href = "../FARMER/farmer_dashboard.html";
 } else {
   window.location.href = "../BUYER/buyer_dashboard.html";
