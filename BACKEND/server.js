@@ -15,7 +15,8 @@ app.use(cors({
   origin: function(origin, callback) {
     const allowedOrigins = [
       "http://127.0.0.1:5500",
-      "http://localhost:5500"
+      "http://localhost:5500",
+      "https://krishisuraksha.netlify.app"
     ];
 
     if (!origin || allowedOrigins.includes(origin)) {
