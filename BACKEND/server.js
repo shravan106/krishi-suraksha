@@ -9,6 +9,36 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 
+/* ================= MIDDLEWARE ================= */
+
+app.use(cors({
+  origin: function(origin, callback) {
+    const allowedOrigins = [
+      "http://127.0.0.1:5500",
+      "http://localhost:5500"
+    ];
+
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
+
+app.options("*", cors());
+
+app.use(express.json());
+
+app.use(session({
+  secret: "krishi_secret_key",
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false }
+}));
+
+
 app.get("/", (req, res) => {
   res.send("KrishiSuraksha API is running 🚀");
 });
@@ -35,24 +65,6 @@ const db = await mysql.createPool({
   connectionLimit: 10,
 });
 console.log("Connected to MySQL");
-/* ================= MIDDLEWARE ================= */
-
-app.use(cors({
-  origin: [
-    "http://127.0.0.1:5500",
-    "http://localhost:5500"
-  ],
-  credentials: true
-}));
-
-app.use(express.json());
-
-app.use(session({
-  secret: "krishi_secret_key",
-  resave: false,
-  saveUninitialized: false,
-  cookie: { secure: false }
-}));
 
 /* ================= ALL DISTRICTS ================= */
 
