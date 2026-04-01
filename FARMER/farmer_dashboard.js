@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadUser();
 
-  const API = "http://localhost:3000/api/weather";
+  const API = "https://krishi-suraksha.onrender.com/api/weather";
   const card = document.getElementById("weatherCard");
   let lockedDistrict = null;
 

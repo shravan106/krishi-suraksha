@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/api";
+const API = "https://krishi-suraksha.onrender.com/api";
 
 let allCrops = [];
 let selectedCropId = null;
@@ -166,7 +166,7 @@ async function processPayment() {
 
   try {
     // ✅ FIX: store response
-    const res = await fetch("http://localhost:3000/api/orders", {
+    const res = await fetch("https://krishi-suraksha.onrender.com/api/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

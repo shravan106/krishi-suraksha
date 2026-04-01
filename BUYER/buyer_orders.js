@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/api/orders";
+const API = "https://krishi-suraksha.onrender.com/api/orders";
 const buyer_id = sessionStorage.getItem("userId");
 
 /* ================= LOAD ORDERS ================= */

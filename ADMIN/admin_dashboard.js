@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/api/admin";
+const API = "https://krishi-suraksha.onrender.com/api/admin";
 
 const AdminState = {
   currentSection: "dashboard",
@@ -300,7 +300,7 @@ async function loadAnalytics() {
 
   container.innerHTML = `<div class="loader">Loading analytics...</div>`;
 
-  const res = await fetch(`http://localhost:3000/api/admin/analytics?range=${selectedRange}`);
+  const res = await fetch(`https://krishi-suraksha.onrender.com/api/admin/analytics?range=${selectedRange}`);
   const data = await res.json();
 
   if (!data.farmers) {
@@ -416,7 +416,7 @@ async function loadCrops() {
 
   container.innerHTML = `<div class="loader">Loading crops...</div>`;
 
-  const res = await fetch("http://localhost:3000/api/admin/crops");
+  const res = await fetch("https://krishi-suraksha.onrender.com/api/admin/crops");
   const crops = await res.json();
 
   container.innerHTML = `
@@ -462,18 +462,18 @@ async function loadCrops() {
    CROPS MODULE (actions)
 ========================= */
 async function approveCrop(id) {
-  await fetch(`http://localhost:3000/api/admin/crops/approve/${id}`, { method: "PUT"
+  await fetch(`https://krishi-suraksha.onrender.com/api/admin/crops/approve/${id}`, { method: "PUT"
   });
   loadCrops();
 }
 
 async function rejectCrop(id) {
-  await fetch(`http://localhost:3000/api/admin/crops/reject/${id}`, { method: "PUT" });
+  await fetch(`https://krishi-suraksha.onrender.com/api/admin/crops/reject/${id}`, { method: "PUT" });
   loadCrops();
 }
 
 async function deleteCrop(id) {
-  await fetch(`http://localhost:3000/api/admin/crops/${id}`, { method: "DELETE" });
+  await fetch(`https://krishi-suraksha.onrender.com/api/admin/crops/${id}`, { method: "DELETE" });
   loadCrops();
 }
 
@@ -541,7 +541,7 @@ async function updateOrderStatus(id, status) {
 }
 
 async function cancelOrder(id) {
-  const res = await fetch(`http://localhost:3000/api/orders/cancel/${id}`, {
+  const res = await fetch(`https://krishi-suraksha.onrender.com/api/orders/cancel/${id}`, {
     method: "PUT"
   });
 

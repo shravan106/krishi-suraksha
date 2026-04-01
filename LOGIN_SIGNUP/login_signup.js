@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/api";
+const API = "https://krishi-suraksha.onrender.com/api";
 
 /* ELEMENTS */
 const loginTab = document.getElementById("loginTab");

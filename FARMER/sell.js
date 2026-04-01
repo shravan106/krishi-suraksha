@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/api/crops";
+const API = "https://krishi-suraksha.onrender.com/api/crops";
 
 const form = document.getElementById("sellForm");
 const container = document.getElementById("listingContainer");

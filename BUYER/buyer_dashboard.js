@@ -17,7 +17,7 @@ function goTo(page) {
   if (page === "orders") window.location.href = "buyer_orders.html";
 }
 
-const API = "http://localhost:3000/api/all-crops";
+const API = "https://krishi-suraksha.onrender.com/api/all-crops";
 
 /* ================= STATS ================= */
 async function loadStats() {
@@ -31,7 +31,7 @@ async function loadStats() {
     // 🔹 FETCH ORDERS FROM BACKEND
     const buyer_id = sessionStorage.getItem("userId");
 
-    const orderRes = await fetch(`http://localhost:3000/api/orders/${buyer_id}`);
+    const orderRes = await fetch(`https://krishi-suraksha.onrender.com/api/orders/${buyer_id}`);
     const orders = await orderRes.json();
 
     document.getElementById("orderCount").innerText = orders.length;
@@ -91,7 +91,7 @@ async function loadRecentOrders() {
   `;
   container.innerHTML = ""; 
   try {
-    const res = await fetch(`http://localhost:3000/api/orders/${buyer_id}`);
+    const res = await fetch(`https://krishi-suraksha.onrender.com/api/orders/${buyer_id}`);
     const orders = await res.json();
 
     if (!orders.length) {
@@ -149,7 +149,7 @@ async function loadChart() {
 async function loadUserStats() {
   const buyer_id = sessionStorage.getItem("userId");
 
-  const res = await fetch(`http://localhost:3000/api/orders/${buyer_id}`);
+  const res = await fetch(`https://krishi-suraksha.onrender.com/api/orders/${buyer_id}`);
   const orders = await res.json();
 
   let total = 0;
@@ -199,7 +199,7 @@ async function loadInsights() {
 async function loadDemand() {
   const buyer_id = sessionStorage.getItem("userId");
 
-  const res = await fetch(`http://localhost:3000/api/orders/${buyer_id}`);
+  const res = await fetch(`https://krishi-suraksha.onrender.com/api/orders/${buyer_id}`);
   const orders = await res.json();
 
   if (!orders.length) return;
@@ -225,7 +225,7 @@ async function loadRecommendations() {
   const crops = await res1.json();
 
   const buyer_id = sessionStorage.getItem("userId");
-  const res2 = await fetch(`http://localhost:3000/api/orders/${buyer_id}`);
+  const res2 = await fetch(`https://krishi-suraksha.onrender.com/api/orders/${buyer_id}`);
   const orders = await res2.json();
 
   if (!orders.length) {

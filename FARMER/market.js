@@ -55,7 +55,7 @@ async function getMarketData() {
   try {
 
 const res = await fetch(
-  `http://localhost:3000/api/market?district=${district}&crop=${crop}`
+  `https://krishi-suraksha.onrender.com/api/market?district=${district}&crop=${crop}`
 );
 
     const data = await res.json();
