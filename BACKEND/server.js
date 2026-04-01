@@ -9,6 +9,9 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("KrishiSuraksha API is running 🚀");
+});
 /* ================= SERVER ================= */
 
 const PORT = process.env.PORT || 5000;
