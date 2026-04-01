@@ -130,7 +130,7 @@ loadOrders();
 
 setInterval(() => {
   loadOrders();
-}, 4000);
+},15000);
 
 /* ================= NAVIGATION ================= */
 function goTo(page) {

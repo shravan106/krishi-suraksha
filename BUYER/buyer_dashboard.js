@@ -121,7 +121,7 @@ setInterval(() => {
   loadStats();
   loadRecentCrops();
   loadRecentOrders();
-}, 5000);
+}, 30000);
 
 /* ================= CHARTS ================= */
 async function loadChart() {
