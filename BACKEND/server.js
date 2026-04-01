@@ -28,7 +28,7 @@ const db = await mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
 });
-
+console.log("Connected to MySQL");
 /* ================= MIDDLEWARE ================= */
 
 app.use(cors({
