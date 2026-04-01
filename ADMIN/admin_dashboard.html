@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel – KrishiSuraksha</title>
+  <link rel="stylesheet" href="admin_dashboard.css" />
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div>
+    <div class="brand">🌾 KrishiSuraksha</div>
+
+    <nav class="menu">
+      <a class="active" data-section="dashboard">Dashboard</a>
+      <a data-section="crops">Crops</a>
+      <a data-section="users">Users</a>
+      <a data-section="orders">Orders</a>
+      <a data-section="analytics">Analytics</a>
+    </nav>
+  </div>
+
+  <button id="logoutBtn" class="logout">Logout</button>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+
+    <div class="topbar-left">
+      <h1 id="pageTitle">Dashboard</h1>
+      <p class="subtitle">Monitor and control the entire platform</p>
+    </div>
+
+    <div class="topbar-right">
+      <input id="globalSearch" placeholder="Search users, crops..." />
+      <span class="admin-chip">Administrator</span>
+    </div>
+
+  </header>
+
+  <!-- DASHBOARD -->
+  <section id="dashboardSection">
+
+    <!-- METRICS -->
+    <div class="metrics">
+      <div class="metric-card">
+        <h3>Total Farmers</h3>
+        <p id="farmersCount">0</p>
+      </div>
+
+      <div class="metric-card">
+        <h3>Total Buyers</h3>
+        <p id="buyersCount">0</p>
+      </div>
+
+      <div class="metric-card">
+        <h3>Total Orders</h3>
+        <p id="ordersCount">0</p>
+      </div>
+
+      <div class="metric-card">
+        <h3>Total Revenue</h3>
+        <p id="revenue">₹0</p>
+      </div>
+    </div>
+
+    <!-- GRID -->
+    <div class="dashboard-grid">
+
+      <!-- CHART -->
+      <div class="admin-card">
+        <h3>Platform Activity</h3>
+        <canvas id="activityChart"></canvas>
+      </div>
+
+      <!-- ORDERS -->
+      <div class="admin-card">
+        <h3>Recent Orders</h3>
+        <div id="recentOrders"></div>
+      </div>
+
+    </div>
+
+    <!-- INSIGHTS -->
+    <div class="insights">
+      <div class="insight-card">
+        <h4>Top Crop</h4>
+        <p id="topCrop">Wheat</p>
+      </div>
+
+      <div class="insight-card">
+        <h4>Top District</h4>
+        <p id="topDistrict">Pune</p>
+      </div>
+
+      <div class="insight-card">
+        <h4>Listings</h4>
+        <p id="activeListings">0</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="dynamicContent"></section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="admin_dashboard.js"></script>
+
+</body>
+</html>

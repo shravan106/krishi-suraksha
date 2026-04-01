@@ -1,0 +1,161 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #16a34a, #22c55e, #bef264);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* =====================
+   FLOATING BG WORDS
+===================== */
+.bg-word {
+  position: absolute;
+  font-size: 120px;
+  font-weight: 900;
+  letter-spacing: 8px;
+  color: rgba(255,255,255,0.18);
+  user-select: none;
+  pointer-events: none;
+  filter: blur(1px);
+  transition: opacity 0.35s ease, filter 0.35s ease;
+  animation: float 24s ease-in-out infinite alternate;
+}
+
+.bg-word.farmer { top: 12%; left: 6%; }
+.bg-word.buyer  { top: 72%; left: 14%; animation-duration: 28s; }
+.bg-word.admin  { top: 22%; left: 58%; animation-duration: 22s; }
+
+@keyframes float {
+  0%   { transform: translate(0,0); }
+  25%  { transform: translate(100px,-40px); }
+  50%  { transform: translate(-80px,60px); }
+  75%  { transform: translate(70px,20px); }
+  100% { transform: translate(-60px,-30px); }
+}
+
+/* Spotlight states */
+body.spot-farmer .bg-farmer,
+body.spot-buyer  .bg-buyer,
+body.spot-admin  .bg-admin {
+  opacity: 0.42;
+  filter: blur(0);
+}
+
+body.spot-farmer .bg-buyer,
+body.spot-farmer .bg-admin,
+body.spot-buyer  .bg-farmer,
+body.spot-buyer  .bg-admin,
+body.spot-admin  .bg-farmer,
+body.spot-admin  .bg-buyer {
+  opacity: 0.08;
+  filter: blur(3px);
+}
+
+/* =====================
+   GLASS WRAPPER
+===================== */
+.wrapper {
+  width: 980px;
+  max-width: 95%;
+  padding: 42px;
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.45);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+
+  z-index: 2;
+  animation: fadeUp 0.6s ease-out;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================
+   HEADER
+===================== */
+.header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #022c22;
+}
+
+.header p {
+  font-size: 14px;
+  color: #065f46;
+}
+
+/* =====================
+   ROLE CARDS
+===================== */
+.roles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.card {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 22px;
+  padding: 28px 22px;
+
+  text-align: center;
+  cursor: pointer;
+
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 24px 45px rgba(0,0,0,0.3);
+}
+
+.card img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #022c22;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #065f46;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 900px) {
+  .roles { grid-template-columns: 1fr; }
+  .bg-word { font-size: 70px; }
+}

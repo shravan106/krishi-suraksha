@@ -1,0 +1,149 @@
+/* BACKGROUND (same as role page) */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #0f9d58, #a8e063);
+}
+
+/* CONTAINER */
+.auth-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GLASS CARD (same style as role page) */
+.auth-card {
+  width: 380px;
+  padding: 30px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.3);
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+
+  text-align: center;
+}
+
+/* TITLE */
+#title {
+  margin-bottom: 5px;
+  color: #1b4332;
+}
+
+#roleText {
+  margin-bottom: 20px;
+  color: #2d6a4f;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tabs .active {
+  background: #2e7d32;
+  color: white;
+}
+
+/* FORMS */
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form.active {
+  display: flex;
+}
+
+/* INPUTS */
+input {
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  background: rgba(255,255,255,0.6);
+}
+
+/* BUTTON */
+button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+
+  background: #2e7d32;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1b5e20;
+}
+
+/* LINKS */
+.link {
+  margin-top: 10px;
+}
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: white;
+  min-width: 250px;
+  font-size: 14px;
+  animation: slideIn 0.3s ease;
+}
+
+.toast.success {
+  background: linear-gradient(135deg, #00e676, #00c853);
+}
+
+.toast.error {
+  background: linear-gradient(135deg, #ff5252, #d32f2f);
+}
+
+.toast.info {
+  background: linear-gradient(135deg, #4fc3f7, #0288d1);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Market Intelligence</title>
+<link rel="stylesheet" href="farmer_dashboard.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<div class="layout">
+
+<aside class="sidebar">
+<div class="brand" style="font-size: 24px;"><strong>🌾 KrishiSuraksha</strong></div>
+<ul class="menu">
+<li><a href="farmer_dashboard.html">🌦 Dashboard</a></li>
+<li><a href="advisory.html">🌾 Crop Advisory</a></li>
+<li><a href="crop-details.html">🌱 Crop Details</a></li>
+<li class="active"><a href="market.html">💰 Market Prices</a></li>
+<li><a href="sell.html">🛒 Sell Crops</a></li>
+<li><a href="schemes.html">🏛 Govt Schemes</a></li>
+<li><a href="about.html">ℹ️ About Us</a></li>
+</ul>
+</aside>
+
+<main class="content">
+<header class="header">
+<h1 style="color:white;"> Market Intelligence</h1>
+<span>Live Market + Trends</span>
+</header>
+
+<div class="map-card">
+<h2>Check Market Prices</h2>
+
+<div class="form-group">
+<label>District</label>
+<select id="district"></select>
+</div>
+
+<div class="form-group">
+<label>Crop</label>
+<select id="crop">
+<option>Select Crop</option>
+
+<!-- Major Cereals -->
+<option>Wheat</option>
+<option>Rice</option>
+<option>Maize</option>
+<option>Jowar</option>
+<option>Bajra</option>
+
+<!-- Pulses -->
+<option>Gram</option>
+<option>Tur</option>
+<option>Moong</option>
+<option>Urad</option>
+<option>Masur</option>
+
+<!-- Oilseeds -->
+<option>Groundnut</option>
+<option>Soybean</option>
+<option>Sunflower</option>
+<option>Sesamum</option>
+
+<!-- Vegetables -->
+<option>Onion</option>
+<option>Tomato</option>
+<option>Potato</option>
+<option>Brinjal</option>
+<option>Chillies</option>
+<option>Garlic</option>
+<option>Ginger</option>
+<option>Cabbage</option>
+<option>Cauliflower</option>
+
+<!-- Fruits -->
+<option>Mango</option>
+<option>Banana</option>
+<option>Grapes</option>
+<option>Pomegranate</option>
+<option>Orange</option>
+<option>Apple</option>
+
+<!-- Cash Crops -->
+<option>Cotton</option>
+<option>Sugarcane</option>
+<option>Tobacco</option>
+
+</select>
+</div>
+
+<button onclick="getMarketData()">Get Live Prices</button>
+</div>
+
+<div id="result" class="stat-card"></div>
+
+<div class="chart-section">
+<canvas id="priceChart"></canvas>
+</div>
+
+</main>
+</div>
+<div id="toastContainer" class="toast-container"></div>
+<script src="market.js"></script>
+<script src="../toast.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Crop Details</title>
+
+<link rel="stylesheet" href="farmer_dashboard.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand" style="font-size: 24px;"><strong>🌾 KrishiSuraksha</strong></div>
+
+    <ul class="menu">
+      <li><a href="farmer_dashboard.html">🌦 Dashboard</a></li>
+      <li><a href="advisory.html">🌾 Crop Advisory</a></li>
+      <li class="active"><a href="crop-details.html">🌱 Crop Details</a></li>
+      <li><a href="market.html">💰 Market Prices</a></li>
+      <li><a href="sell.html">🛒 Sell Crops</a></li>
+      <li><a href="schemes.html">🏛 Govt Schemes</a></li>
+      <li><a href="about.html">ℹ️ About Us</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="content">
+
+    <!-- HEADER -->
+    <header class="header">
+      <h1 style="color:white;"> Crop Intelligence Dashboard</h1>
+      <span>Advanced crop analytics system</span>
+    </header>
+
+    <!-- SELECT PANEL -->
+    <div class="map-card premium-card">
+
+      <h2>🌱 Select Crop</h2>
+
+      <select id="cropSelect">
+        <!-- Cereals -->
+        <option>Wheat</option>
+        <option>Rice</option>
+        <option>Maize</option>
+        <option>Barley</option>
+        <option>Millet</option>
+        <option>Sorghum</option>
+            
+        <!-- Pulses -->
+        <option>Chickpea</option>
+        <option>PigeonPea</option>
+        <option>GreenGram</option>
+        <option>BlackGram</option>
+        <option>Soybean</option>
+            
+        <!-- Oilseeds -->
+        <option>Groundnut</option>
+        <option>Mustard</option>
+        <option>Sunflower</option>
+            
+        <!-- Commercial Crops -->
+        <option>Cotton</option>
+        <option>Sugarcane</option>
+            
+        <!-- Vegetables -->
+        <option>Tomato</option>
+        <option>Potato</option>
+        <option>Onion</option>
+        <option>Garlic</option>
+            
+        <!-- Fruits -->
+        <option>Banana</option>
+        <option>Mango</option>
+        <option>Grapes</option>
+        <option>Apple</option>
+        <option>Orange</option>
+      </select>
+
+      <button class="primary-btn" onclick="loadCropDetails()">
+        🔍 Analyze Crop
+      </button>
+
+    </div>
+
+    <!-- 🔥 RESULT (IMPORTANT CHANGE HERE) -->
+    <div id="cropResult"></div>
+
+    <div class="chart-section">
+        <canvas id="yieldChart"></canvas>
+    </div>
+
+  </main>
+
+</div>
+<div id="toastContainer" class="toast-container"></div>
+<script src="crop-details.js"></script>
+<script src="../toast.js"></script>
+</body>
+</html>

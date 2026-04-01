@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KrishiSuraksha Auth</title>
+  <link rel="stylesheet" href="login_signup.css">
+</head>
+<body>
+
+<div class="auth-container">
+  <div class="auth-card">
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button id="loginTab" class="active">Login</button>
+      <button id="signupTab">Signup</button>
+    </div>
+
+    <h3 id="title">Login</h3>
+    <p id="roleText"></p>
+
+    <!-- MESSAGE AREA -->
+    <div id="messageBox" style="margin-bottom:10px; color:red;"></div>
+
+    <!-- LOGIN -->
+    <form id="loginForm" class="form active">
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+
+      <button type="submit">Login</button>
+
+      <p class="link">
+        <a href="#" onclick="showForgot()">Forgot Password?</a>
+      </p>
+    </form>
+
+    <!-- SIGNUP -->
+    <form id="signupForm" class="form">
+      <input type="text" id="signupName" placeholder="Full Name" required>
+      <input type="email" id="signupEmail" placeholder="Email" required>
+      <input type="text" id="signupPhone" placeholder="Phone" required>
+
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+      <small style="color: gray;">Password must be at least 6 characters</small>
+
+      <button type="submit">Create Account</button>
+    </form>
+
+    <!-- FORGOT -->
+    <form id="forgotForm" class="form">
+      <input type="email" id="forgotEmail" placeholder="Enter your email" required>
+      <input type="password" id="newPassword" placeholder="New Password" required>
+
+      <button type="submit">Reset Password</button>
+
+      <p class="link">
+        <a href="#" onclick="showLogin()">Back to Login</a>
+      </p>
+    </form>
+
+  </div>
+</div>
+<div id="toastContainer" class="toast-container"></div>
+<script src="login_signup.js"></script>
+<script src="../toast.js"></script>
+</body>
+</html>

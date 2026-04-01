@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sell Crops – KrishiSuraksha</title>
+
+<link rel="stylesheet" href="farmer_dashboard.css">
+
+<style>
+.sell-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.sell-form .full {
+  grid-column: span 2;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.available {
+  background: #00e676;
+  color: black;
+}
+
+.sold {
+  background: #ff5252;
+  color: white;
+}
+
+.message-box {
+  margin-bottom: 10px;
+  font-weight: bold;
+  min-height: 18px;
+}
+.sell-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.form-group input {
+  width: 100%;
+}
+
+.sell-form .full {
+  grid-column: span 4;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="brand" style="font-size: 24px;"><strong>🌾 KrishiSuraksha</strong></div>
+
+  <ul class="menu">
+    <li><a href="farmer_dashboard.html">🌦 Dashboard</a></li>
+    <li><a href="advisory.html">🌾 Crop Advisory</a></li>
+    <li><a href="crop-details.html">🌱 Crop Details</a></li>
+    <li><a href="market.html">💰 Market Prices</a></li>
+    <li class="active"><a href="sell.html">🛒 Sell Crops</a></li>
+    <li><a href="schemes.html">🏛 Govt Schemes</a></li>
+    <li><a href="about.html">ℹ️ About Us</a></li>
+  </ul>
+</aside>
+
+<!-- MAIN -->
+<main class="content">
+      <header class="header">
+        <h1 style="color:white;"> Sell Crops</h1>
+        <span>Manage and sell your produce</span>
+      </header>
+
+<!-- FORM -->
+<div class="dashboard-card">
+  <h3 style="color: white;">Add Listing</h3>
+<p id="message" class="message-box"></p>
+<form id="sellForm" class="sell-form">
+
+  <div class="form-group">
+    <label style="color: white;">Crop</label>
+    <input type="text" id="cropName" placeholder="Enter crop" required>
+  </div>
+
+  <div class="form-group">
+    <label style="color: white;">Quantity (kg)</label>
+    <input type="number" id="quantity" required>
+  </div>
+
+  <div class="form-group">
+    <label style="color: white;">Price (₹)</label>
+    <input type="number" id="price" required>
+  </div>
+
+  <div class="form-group">
+    <label style="color: white;">District</label>
+    <input type="text" id="district" placeholder="Enter district" required>
+  </div>
+
+  <button class="primary-btn full">+ Post Listing</button>
+
+</form>
+</div>
+<br>
+<!-- LISTINGS -->
+<div class="dashboard-card">
+  <h3 style="color: white;">📦 Your Listings</h3>
+  <div id="listingContainer" class="listing-grid"></div>
+</div>
+
+</main>
+</div>
+<div id="toastContainer" class="toast-container"></div>
+<script src="sell.js"></script>
+<script src="../toast.js"></script>
+</body>
+</html>

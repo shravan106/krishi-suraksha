@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Orders</title>
+<link rel="stylesheet" href="buyer_dashboard.css">
+</head>
+
+<body>
+<aside class="sidebar">
+  <h2>🌾 KrishiSuraksha</h2>
+  <button onclick="goTo('dashboard')">Dashboard</button>
+  <button onclick="goTo('crops')">Marketplace</button>
+  <button onclick="goTo('orders')" class="active">Orders</button>
+</aside>
+<div class="main">
+
+<div class="dashboard">
+
+<h1>My Orders</h1>
+
+<div id="orders" class="cards"></div>
+
+</div>
+
+</div>
+<div id="toastContainer" class="toast-container"></div>
+<script src="../toast.js"></script>
+<script src="buyer_orders.js"></script>
+</body>
+</html>

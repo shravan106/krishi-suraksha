@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Marketplace</title>
+<link rel="stylesheet" href="buyer_dashboard.css">
+</head>
+
+<body>
+<aside class="sidebar">
+  <h2>🌾 KrishiSuraksha</h2>
+  <button onclick="goTo('dashboard')">Dashboard</button>
+  <button onclick="goTo('crops')" class="active">Marketplace</button>
+  <button onclick="goTo('orders')">Orders</button>
+</aside>
+<div class="main">
+
+<div class="dashboard">
+
+<h1>Marketplace</h1>
+
+<!-- CONTROLS -->
+<div class="controls">
+
+  <!-- SEARCH -->
+  <input type="text" id="search" placeholder="Search crops...">
+
+  <!-- DISTRICT -->
+  <select id="filter">
+    <option value="all">All Districts  </option>
+  </select>
+
+  <!-- SORT -->
+  <select id="sort">
+    <option value="default" style="color: rgb(0, 0, 0);">Sort</option>
+    <option value="low" style="color: black;">Price: Low → High</option>
+    <option value="high" style="color: black;">Price: High → Low</option>
+  </select>
+
+</div>
+
+<div id="list" class="cards"></div>
+
+</div>
+
+</div>
+
+<!-- PAYMENT MODAL -->
+<div id="paymentModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>💳 Checkout</h2>
+    <input type="number" id="quantityInput" placeholder="Quantity">
+    <input type="text" id="addressInput" placeholder="Delivery Address">
+    <select id="payMethod">
+      <option value="" style="color: black;">Select Payment Type</option>
+      <option value="COD" style="color: black;">Cash on Delivery</option>
+      <option value="UPI" style="color: black;">UPI</option>
+      <option value="CARD" style="color: black;">Card</option>
+    </select>
+    <div id="paymentDetails"></div>
+    <button id="payBtn" onclick="processPayment()">Pay Now</button>
+    <button onclick="closeModal()">Cancel</button>
+      <div id="successScreen" class="success hidden">
+      <div class="tick">✔</div>
+      <h2>Payment Successful</h2>
+      <p>Order placed successfully</p>
+    </div>
+  </div>
+
+</div>
+<div id="toastContainer" class="toast-container"></div>
+<script src="../toast.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="buyer_crops.js"></script>
+</body>
+</html>

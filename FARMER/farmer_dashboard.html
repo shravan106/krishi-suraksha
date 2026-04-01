@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KrishiSuraksha – Farmer Dashboard</title>
+
+<link rel="stylesheet" href="farmer_dashboard.css">
+<link rel="stylesheet"
+ href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="brand" style="font-size: 24px;"><strong>🌾 KrishiSuraksha</strong></div>
+
+    <ul class="menu">
+      <li class="active"><a href="farmer_dashboard.html">🌦 Dashboard</a></li>
+      <li><a href="advisory.html">🌾 Crop Advisory</a></li>
+      <li><a href="crop-details.html">🌱 Crop Details</a></li>
+      <li><a href="market.html">💰 Market Prices</a></li>
+      <li><a href="sell.html">🛒 Sell Crops</a></li>
+      <li><a href="schemes.html">🏛 Govt Schemes</a></li>
+      <li><a href="about.html">ℹ️ About Us</a></li>
+    </ul>
+
+    <!-- PROFILE -->
+    <div class="profile-section">
+      <div class="profile-trigger" id="profileToggle">
+        <div class="avatar" id="avatar">--</div>
+        <div class="profile-text">
+          <strong id="profileName">Loading...</strong>
+          <small id="profileRole">Farmer</small>
+        </div>
+      </div>
+
+      <div class="profile-dropdown" id="profileDropdown">
+  <div class="dropdown-item logout" id="logoutBtn" style="color: rgb(0, 0, 0);">🚪 Logout</div>
+</div>
+
+    </div>
+
+  </aside>
+
+  <!-- Expand Button -->
+  <button id="expandBtn" class="expand-btn hidden">➤</button>
+
+  <!-- ================= CONTENT ================= -->
+  <main class="content">
+
+    <header class="header">
+      <h1 style="color: white;">Maharashtra Weather Dashboard</h1>
+      <span class="welcome">Live Weather Monitoring</span>
+    </header>
+
+    <div class="map-card">
+      <div id="map"></div>
+      <div id="weatherCard" class="weather-card hidden"></div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>🌡 Temperature</h3>
+        <p>Live by district</p>
+      </div>
+      <div class="stat-card">
+        <h3>💧 Humidity</h3>
+        <p>Live by district</p>
+      </div>
+      <div class="stat-card">
+        <h3>🌾 Crop Suggestion</h3>
+        <p>Based on weather</p>
+      </div>
+      <div class="stat-card">
+        <h3>⚠ Alerts</h3>
+        <p>Extreme weather detection</p>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+<div id="toastContainer" class="toast-container"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="farmer_dashboard.js"></script>
+<script src="../toast.js"></script>
+</body>
+</html>

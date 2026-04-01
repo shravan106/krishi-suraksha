@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Crop Advisory</title>
+
+<!-- SAME CSS AS DASHBOARD -->
+<link rel="stylesheet" href="farmer_dashboard.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR (UNCHANGED) -->
+  <aside class="sidebar">
+
+    <div class="brand" style="font-size: 24px;"><strong>🌾 KrishiSuraksha</strong></div>
+
+    <ul class="menu">
+      <li><a href="farmer_dashboard.html">🌦 Dashboard</a></li>
+      <li class="active"><a href="advisory.html">🌾 Crop Advisory</a></li>
+      <li><a href="crop-details.html">🌱 Crop Details</a></li>
+      <li><a href="market.html">💰 Market Prices</a></li>
+      <li><a href="sell.html">🛒 Sell Crops</a></li>
+      <li><a href="schemes.html">🏛 Govt Schemes</a></li>
+      <li><a href="about.html">ℹ️ About Us</a></li>
+    </ul>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- HEADER SAME STYLE -->
+    <header class="header">
+      <h1 style="color:white;">Crop Advisory</h1>
+      <span>Smart recommendation system</span>
+    </header>
+
+    <!-- FORM CARD (SAME STYLE AS MAP CARD) -->
+    <div class="map-card">
+
+      <h2>Enter Crop Details</h2>
+
+      <div class="form-group">
+  <label>District (Maharashtra)</label>
+  <select id="district">
+
+    <!-- Konkan -->
+    <option>Mumbai</option>
+    <option>Mumbai Suburban</option>
+    <option>Thane</option>
+    <option>Palghar</option>
+    <option>Raigad</option>
+    <option>Ratnagiri</option>
+    <option>Sindhudurg</option>
+
+    <!-- Western Maharashtra -->
+    <option>Pune</option>
+    <option>Satara</option>
+    <option>Sangli</option>
+    <option>Kolhapur</option>
+    <option>Solapur</option>
+
+    <!-- North Maharashtra -->
+    <option>Nashik</option>
+    <option>Ahmednagar</option>
+    <option>Dhule</option>
+    <option>Nandurbar</option>
+    <option>Jalgaon</option>
+
+    <!-- Marathwada -->
+    <option>Aurangabad</option>
+    <option>Jalna</option>
+    <option>Beed</option>
+    <option>Osmanabad</option>
+    <option>Latur</option>
+    <option>Nanded</option>
+    <option>Parbhani</option>
+    <option>Hingoli</option>
+
+    <!-- Vidarbha -->
+    <option>Nagpur</option>
+    <option>Wardha</option>
+    <option>Bhandara</option>
+    <option>Gondia</option>
+    <option>Chandrapur</option>
+    <option>Gadchiroli</option>
+    <option>Amravati</option>
+    <option>Akola</option>
+    <option>Washim</option>
+    <option>Yavatmal</option>
+    <option>Buldhana</option>
+
+  </select>
+</div>
+
+      <div class="form-group">
+        <label>Crop</label>
+        <select id="crop">
+
+  <!-- Cereals -->
+  <option>Wheat</option>
+  <option>Rice</option>
+  <option>Maize</option>
+  <option>Barley</option>
+  <option>Millet</option>
+  <option>Sorghum</option>
+
+  <!-- Pulses -->
+  <option>Chickpea</option>
+  <option>PigeonPea</option>
+  <option>GreenGram</option>
+  <option>BlackGram</option>
+  <option>Soybean</option>
+
+  <!-- Oilseeds -->
+  <option>Groundnut</option>
+  <option>Mustard</option>
+  <option>Sunflower</option>
+
+  <!-- Commercial Crops -->
+  <option>Cotton</option>
+  <option>Sugarcane</option>
+
+  <!-- Vegetables -->
+  <option>Tomato</option>
+  <option>Potato</option>
+  <option>Onion</option>
+  <option>Garlic</option>
+
+  <!-- Fruits -->
+  <option>Banana</option>
+  <option>Mango</option>
+  <option>Grapes</option>
+  <option>Apple</option>
+  <option>Orange</option>
+
+</select>
+      </div>
+
+      <div class="form-group">
+        <label>Season</label>
+        <select id="season">
+          <option>Rabi</option>
+          <option>Kharif</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Soil</label>
+        <select id="soil">
+          <option>Loamy</option>
+          <option>Clay</option>
+          <option>Sandy</option>
+        </select>
+      </div>
+
+      <button onclick="getAdvice()">Get Advisory</button>
+
+    </div>
+
+    <!-- RESULT CARD (SAME STYLE AS STATS) -->
+    <div class="stat-card" id="result">
+      <h3>🌟 Advisory Result</h3>
+      <p>Your recommendation will appear here</p>
+    </div>
+
+  </main>
+
+</div>
+<div id="toastContainer" class="toast-container"></div>
+<script src="advisory.js"></script>
+<script src="../toast.js"></script>
+</body>
+</html>

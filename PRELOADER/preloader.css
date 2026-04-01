@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #14532d 0%,
+    #16a34a 40%,
+    #86efac 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* BIG BACKGROUND WORD */
+.bg-word {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 140px;
+  font-weight: 900;
+  letter-spacing: 10px;
+  color: rgba(255, 255, 255, 0.64);
+  user-select: none;
+  pointer-events: none;
+  animation: slowBreath 6s ease-in-out infinite;
+}
+
+/* Soft breathing animation (calming) */
+@keyframes slowBreath {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.18; }
+}
+
+/* CENTER CONTENT */
+.center {
+  text-align: center;
+  color: #022c22;
+  z-index: 2;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* LOGO */
+.logo {
+  font-size: 54px;
+  margin-bottom: 10px;
+  animation: float 3.2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* TITLE */
+.title {
+  font-size: 34px;
+  font-weight: 900;
+  color: #022c22;
+  margin-bottom: 18px;
+}
+
+/* PROGRESS BAR */
+.progress-box {
+  width: 300px;
+  height: 9px;
+  background: rgba(255,255,255,0.55);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0 auto 10px;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #065f46,
+    #16a34a,
+    #22c55e
+  );
+  border-radius: 999px;
+  transition: width 0.05s linear;
+}
+
+/* PERCENT */
+.percent {
+  font-weight: 800;
+  font-size: 16px;
+  color: #064e3b;
+  margin-bottom: 10px;
+}
+
+/* LOADING TEXT */
+.loading {
+  font-size: 14px;
+  color: #064e3b;
+  animation: pulseText 2s ease-in-out infinite;
+}
+
+@keyframes pulseText {
+  0%,100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .bg-word { font-size: 80px; }
+  .title { font-size: 26px; }
+}
